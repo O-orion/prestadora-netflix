@@ -1,0 +1,25 @@
+.mensagem-sucesso {
+  display: inline-block;
+  background-color: #186f28;
+  color: #fff;
+  width: 100%;
+  height: 5%;
+
+  text-align: center;
+  font-weight: 600;
+
+  font-size: 18px;
+}
+
+.mensagem-falha {
+  display: inline-block;
+  background-color: #d80032;
+  color: #fff;
+  width: 100%;
+  height: 5%;
+
+  text-align: center;
+  font-weight: 600;
+
+  font-size: 18px;
+}

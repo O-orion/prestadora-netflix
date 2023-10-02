@@ -1,5 +1,6 @@
 <section class="container-register">
   <div class="box-register">
+    <app-menssagen-feedback ></app-menssagen-feedback>
     <h1 class="titulo-register">Crie sua conta!</h1>
     <section class="form-register">
       <form [formGroup]="formRegister" >
@@ -31,7 +32,7 @@
           </mat-form-field>
         </p>
         <div class="buttons-register">
-          <app-button color="primary" texto="Criar conta!"></app-button>
+          <app-button color="primary" texto="Criar conta!" (click)="registrarUsuario()"></app-button>
           <a class="register-link__login" routerLink="/">Realizar login!</a>
         </div>
       </form>

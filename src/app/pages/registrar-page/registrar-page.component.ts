@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { IUsuario } from 'src/app/models/Usuario-interface';
 
 @Component({
   selector: 'app-registrar-page',
@@ -21,7 +22,19 @@ export class RegistrarPageComponent {
   }
 
   public registrarUsuario(): void {
-    
+    if(this.formularioValido()) {
+      const { nome, email, senha } = this.formRegister.getRawValue() as IUsuario;
+      alert(nome + ' ' + email + ' ' + senha)
+    }
+  }
+
+  private formularioValido(): boolean {
+
+    if (this.formRegister.invalid) {
+      this.formRegister.markAllAsTouched();
+      return false;
+    }
+    return true;
   }
 
 }
