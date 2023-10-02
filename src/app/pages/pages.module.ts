@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatCardModule} from '@angular/material/card';
 import { MenssagenFeedbackComponent } from './components/menssagen-feedback/menssagen-feedback.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MenssagenFeedbackComponent } from './components/menssagen-feedback/mens
     ReactiveFormsModule,
     RouterModule,
     BrowserModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ]
 })
 export class PagesModule { }

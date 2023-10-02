@@ -1,6 +1,6 @@
 <section class="container-register">
   <div class="box-register">
-    <app-menssagen-feedback ></app-menssagen-feedback>
+    <app-menssagen-feedback *ngIf="exibirMensagem" [menssagem]='mensagemStatus' [status]="statusCadastros"></app-menssagen-feedback>
     <h1 class="titulo-register">Crie sua conta!</h1>
     <section class="form-register">
       <form [formGroup]="formRegister" >
