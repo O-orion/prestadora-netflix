@@ -1,0 +1,45 @@
+@import '../../minxins/variables.scss';
+
+.container-login {
+  height: 100%;
+  @include flex-center;
+
+
+  .box-login {
+    height: 50%;
+    width: 30%;
+
+    border-radius: 10px;
+
+    @include sombra-realista;
+
+    .titulo-login {
+      @include titulos;
+      margin: 8px 0 0 0;
+      color: #FDF0F0;
+    }
+
+    .form-login {
+      height: 80%;
+      width: 100%;
+      @include flex-center;
+
+      .color-icon {
+        color: $cor-primaria;
+      }
+    }
+
+    .login-link__register {
+      margin-top: 5px;
+      text-align: center;
+      color: #FDF0F0;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+  }
+
+  .box-login:hover {
+    @include sombra-hover;
+  }
+}

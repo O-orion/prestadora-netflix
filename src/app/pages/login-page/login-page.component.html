@@ -1,1 +1,31 @@
-<p>login-page works!</p>
+<main class="container-login">
+  <section class="box-login">
+      <h2  color="warn" class="titulo-login">Faça seu Login</h2>
+      <div class="form-login">
+        <form [formGroup]="formLogin">
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Seu email</mat-label>
+              <input formControlName="email" matInput placeholder="meuEmail@gmail.com">
+              <mat-icon class="color-icon" matSuffix>email</mat-icon>
+              <mat-error >Insira um email válido!</mat-error>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field >
+              <mat-label>Sua senha</mat-label>
+              <input formControlName="senha" matInput [type]="hide ? 'password': 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.arial-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon class="color-icon" >{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+              </button>
+              <mat-error >Insira uma senha válido!</mat-error>
+            </mat-form-field>
+          </p>
+
+        </form>
+
+        <app-button color="primary" texto="Entrar" (click)="autenticar()"></app-button>
+        <a class="login-link__register" routerLink="/criarConta">Clique aqui para criar seua conta!</a>
+      </div>
+  </section>
+</main>

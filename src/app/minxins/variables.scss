@@ -1,0 +1,24 @@
+$cor-primaria: #132043;
+$cor-secondaria: #ffff;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin sombra-realista {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+@mixin sombra-hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+@mixin titulos {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+}
