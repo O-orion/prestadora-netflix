@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { RegisterService } from 'src/app/services/register.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginPageComponent {
   formLogin!: UntypedFormGroup;
   formInvalido: boolean = false;
 
-  constructor(private formBuilder: UntypedFormBuilder) {}
+  constructor(private formBuilder: UntypedFormBuilder, private usuarioService: RegisterService) {}
 
   ngOnInit () {
     this.formLogin = this.formBuilder.group({
@@ -28,6 +29,17 @@ export class LoginPageComponent {
       const { email, senha } = this.formLogin.getRawValue()
       alert(`${email} - ${senha}`)
       this.formLogin.reset()
+
+      this.usuarioService.login({'Email': email, 'Senha': senha}).subscribe({
+        next: (dados) => {
+          console.log('certoo')
+          console.log(dados)
+        },
+        error: (err) => {
+          console.log('certou ou errado')
+          console.log(err)
+        }
+      })
     }
 
   }

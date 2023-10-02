@@ -7,12 +7,16 @@ import { IUsuario } from '../models/Usuario-interface';
 })
 
 export class RegisterService {
-  URL:string = 'http://localhost:7200/register';
+  private URL:string = 'http://localhost:7200';
 
   constructor(private http: HttpClient) { }
 
 
   public registrarUsuario(usuario: IUsuario) {
-    return this.http.post<any>(`${this.URL}`, usuario)
+    return this.http.post<any>(`${this.URL}/register`, usuario)
+  }
+
+  public login(usuarioLogin:any) {
+    return this.http.post<any>(`${this.URL}/login`, usuarioLogin)
   }
 }
