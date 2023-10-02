@@ -1,0 +1,44 @@
+@import '../../minxins/variables.scss';
+
+.container-register {
+  @include flex-center;
+  height: 100%;
+
+  .box-register {
+
+    width: 40%;
+
+    @include sombra-realista;
+
+    .titulo-register {
+      @include titulos;
+      border-bottom: 5px solid $cor-secondaria;
+      margin-top: 5%;
+
+    }
+
+    .form-register {
+      padding: 20px 0 0 0;
+      margin-bottom: 10%;
+
+      @include flex-center;
+
+      .buttons-register {
+        width: 100%;
+        @include flex-center;
+
+        .register-link__login {
+          margin-top: 5px;
+          color: $cor-secondaria;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
+
+  .box-register:hover {
+    @include sombra-hover;
+  }
+}

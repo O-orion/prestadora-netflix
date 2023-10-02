@@ -1,1 +1,40 @@
-<p>registrar-page works!</p>
+<section class="container-register">
+  <div class="box-register">
+    <h1 class="titulo-register">Crie sua conta!</h1>
+    <section class="form-register">
+      <form [formGroup]="formRegister" >
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Insira seu nome</mat-label>
+            <input formControlName="nome" matInput placeholder="Placeholder">
+            <mat-icon class="color-icon" matSuffix>badge</mat-icon>
+            <mat-error >Insira um nome válido!</mat-error>
+
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <mat-label>Insira seu email</mat-label>
+            <input formControlName="email" matInput placeholder="Placeholder">
+            <mat-icon class="color-icon" matSuffix>email</mat-icon>
+            <mat-error >Insira um emial válido!</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field >
+            <mat-label>Sua senha</mat-label>
+            <input formControlName="senha" matInput [type]="hide ? 'password': 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.arial-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon class="color-icon" >{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+            </button>
+            <mat-error >Insira uma senha válido!</mat-error>
+          </mat-form-field>
+        </p>
+        <div class="buttons-register">
+          <app-button color="primary" texto="Criar conta!"></app-button>
+          <a class="register-link__login" routerLink="/">Realizar login!</a>
+        </div>
+      </form>
+    </section>
+  </div>
+</section>
